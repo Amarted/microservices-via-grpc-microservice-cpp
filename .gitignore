@@ -1,6 +1,8 @@
-# Debug and compilation files
-x64/
-c-microservice/
+# Output debug and compilation files
+out/
 
 # Installed dependencies
 vcpkg_installed/
+
+# Editor files
+.vs
