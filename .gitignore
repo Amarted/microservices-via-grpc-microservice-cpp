@@ -1,0 +1,6 @@
+# Debug and compilation files
+x64/
+c-microservice/
+
+# Installed dependencies
+vcpkg_installed/
