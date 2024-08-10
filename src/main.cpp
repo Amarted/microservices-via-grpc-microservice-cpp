@@ -1,9 +1,17 @@
+#include <grpcpp/grpcpp.h>
 import <iostream>;
 import Utils;
+import Api;
+using grpc::Server;
+using grpc::ServerBuilder;
 
 int main()
 {
     Screen::clear();
+
     std::cout << "Starting the gRPC server...\n";
-    /* @todo Implement starting the grpc server */
+
+    Api::RpcServer apiServer;
+    apiServer.start();
+    apiServer.doNotShutdown();
 }
