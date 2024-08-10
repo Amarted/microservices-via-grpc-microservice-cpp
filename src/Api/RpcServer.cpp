@@ -1,11 +1,11 @@
 module;
 #include <grpcpp/grpcpp.h>
-#include "RpcApiService.grpc.pb.h"
+#include "generated/UserGreetingsRpcService.grpc.pb.h"
 #include <memory>
 #include <string>
 
 export module Api:Server;
-import :RpcService;
+import :UserGreetingsRpcService;
 import <iostream>;
 using grpc::Server;
 using grpc::ServerBuilder;
@@ -28,7 +28,7 @@ export namespace Api {
 
   private:
     std::unique_ptr<grpc::Server> createServer(std::string serverAddress) {
-      RpcApiService service;
+      UserGreetingsRpcService service;
       grpc::ServerBuilder builder;
       builder.AddListeningPort(serverAddress, grpc::InsecureServerCredentials());
       builder.RegisterService(&service);
@@ -36,7 +36,7 @@ export namespace Api {
       return builder.BuildAndStart();
     }
 
-    void displayStatus() {
+    void displayStatus() const {
       std::cout << "Server listening on " << serverAddress << std::endl;
     }
   };

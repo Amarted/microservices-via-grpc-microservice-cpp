@@ -3,7 +3,7 @@ syntax = "proto3";
 package Api.GrpcProto;
 
 // The application interface through the RPC protocol.
-service RcpApiService {
+service UserGreetingRpcService {
   // Greets a user with a username obtained from a request parameter.
   rpc greet(UserGreetingsRequest) returns (UserGreetingsResponse) {}
 }

@@ -20,23 +20,24 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Api\ApiModule.cpp" />
-    <ClCompile Include="src\Api\RpcService.cpp" />
-    <ClCompile Include="src\Api\Server.cpp" />
-    <ClCompile Include="src\Api\RpcApiService.grpc.pb.cc" />
-    <ClCompile Include="src\Api\RpcApiService.pb.cc" />
+    <ClCompile Include="src\Api\generated\UserGreetingsRpcService.grpc.pb.cc" />
+    <ClCompile Include="src\Api\generated\UserGreetingsRpcService.pb.cc" />
+    <ClCompile Include="src\Api\UserGreetingsRpcService.cpp" />
+    <ClCompile Include="src\Api\RpcServer.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\utils\Screen.cpp" />
     <ClCompile Include="src\utils\UtilsModule.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="generate-proto-buffers-code.bat" />
-    <None Include="src\proto-buffers\RpcApiService.proto" />
+    <None Include="src\Api\generated\Readme.md" />
+    <None Include="src\proto-buffers\UserGreetingsRpcService.proto" />
     <None Include="vcpkg-configuration.json" />
     <None Include="vcpkg.json" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Api\RpcApiService.grpc.pb.h" />
-    <ClInclude Include="src\Api\RpcApiService.pb.h" />
+    <ClInclude Include="src\Api\generated\UserGreetingsRpcService.grpc.pb.h" />
+    <ClInclude Include="src\Api\generated\UserGreetingsRpcService.pb.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

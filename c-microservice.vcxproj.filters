@@ -22,6 +22,9 @@
     <Filter Include="Source Files\Api">
       <UniqueIdentifier>{2d6c614e-72e4-4661-925c-6cc1fbcbbc57}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Api\generated">
+      <UniqueIdentifier>{fb26ecb8-3ae9-4d46-8473-b9dfd1930e1e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -36,33 +39,36 @@
     <ClCompile Include="src\Api\ApiModule.cpp">
       <Filter>Source Files\Api</Filter>
     </ClCompile>
-    <ClCompile Include="src\Api\RpcApiService.grpc.pb.cc">
+    <ClCompile Include="src\Api\RpcServer.cpp">
       <Filter>Source Files\Api</Filter>
     </ClCompile>
-    <ClCompile Include="src\Api\RpcApiService.pb.cc">
+    <ClCompile Include="src\Api\UserGreetingsRpcService.cpp">
       <Filter>Source Files\Api</Filter>
     </ClCompile>
-    <ClCompile Include="src\Api\Server.cpp">
-      <Filter>Source Files\Api</Filter>
+    <ClCompile Include="src\Api\generated\UserGreetingsRpcService.grpc.pb.cc">
+      <Filter>Source Files\Api\generated</Filter>
     </ClCompile>
-    <ClCompile Include="src\Api\RpcService.cpp">
-      <Filter>Source Files\Api</Filter>
+    <ClCompile Include="src\Api\generated\UserGreetingsRpcService.pb.cc">
+      <Filter>Source Files\Api\generated</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="vcpkg-configuration.json" />
     <None Include="vcpkg.json" />
-    <None Include="src\proto-buffers\RpcApiService.proto">
+    <None Include="src\proto-buffers\UserGreetingsRpcService.proto">
       <Filter>Source Files\proto-buffers</Filter>
     </None>
     <None Include="generate-proto-buffers-code.bat" />
+    <None Include="src\Api\generated\Readme.md">
+      <Filter>Source Files\Api\generated</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Api\RpcApiService.grpc.pb.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Api\generated\UserGreetingsRpcService.grpc.pb.h">
+      <Filter>Source Files\Api\generated</Filter>
     </ClInclude>
-    <ClInclude Include="src\Api\RpcApiService.pb.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Api\generated\UserGreetingsRpcService.pb.h">
+      <Filter>Source Files\Api\generated</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

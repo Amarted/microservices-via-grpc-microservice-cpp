@@ -1,3 +1,3 @@
 export module Api;
 export import :Server;
-export import :RpcService;
+export import :UserGreetingsRpcService;

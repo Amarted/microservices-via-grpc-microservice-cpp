@@ -1,8 +1,8 @@
 module;
 #include <grpcpp/grpcpp.h>
-#include "RpcApiService.grpc.pb.h"
+#include "generated/UserGreetingsRpcService.grpc.pb.h"
 
-export module Api:RpcService;
+export module Api:UserGreetingsRpcService;
 
 import <iostream>;
 import <memory>;
@@ -14,7 +14,7 @@ using Api::GrpcProto::UserGreetingsRequest;
 using Api::GrpcProto::UserGreetingsResponse;
 
 export namespace Api {
-  export class RpcApiService final : public Api::GrpcProto::RcpApiService::Service {
+  export class UserGreetingsRpcService final : public Api::GrpcProto::UserGreetingRpcService::Service {
     Status greet(
       ServerContext* context,
       const UserGreetingsRequest* request,
