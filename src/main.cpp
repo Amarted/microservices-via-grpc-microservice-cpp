@@ -7,7 +7,7 @@ using grpc::ServerBuilder;
 
 int main()
 {
-    Screen::clear();
+    Utils::Screen::clear();
 
     std::cout << "Starting the gRPC server...\n";
 
