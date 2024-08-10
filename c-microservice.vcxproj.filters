@@ -16,6 +16,12 @@
     <Filter Include="Source Files\Utils">
       <UniqueIdentifier>{2a8f7eef-c24f-469e-8b26-84685722bec5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\proto-buffers">
+      <UniqueIdentifier>{55f894b8-fb57-46a6-a37d-c3e09317c5df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Api">
+      <UniqueIdentifier>{2d6c614e-72e4-4661-925c-6cc1fbcbbc57}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -24,12 +30,39 @@
     <ClCompile Include="src\Utils\UtilsModule.cpp">
       <Filter>Source Files\Utils</Filter>
     </ClCompile>
-    <ClCompile Include="src\Utils\screen.cpp">
+    <ClCompile Include="src\utils\Screen.cpp">
       <Filter>Source Files\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Api\ApiModule.cpp">
+      <Filter>Source Files\Api</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Api\RpcApiService.grpc.pb.cc">
+      <Filter>Source Files\Api</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Api\RpcApiService.pb.cc">
+      <Filter>Source Files\Api</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Api\Server.cpp">
+      <Filter>Source Files\Api</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Api\RpcService.cpp">
+      <Filter>Source Files\Api</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="vcpkg-configuration.json" />
     <None Include="vcpkg.json" />
+    <None Include="src\proto-buffers\RpcApiService.proto">
+      <Filter>Source Files\proto-buffers</Filter>
+    </None>
+    <None Include="generate-proto-buffers-code.bat" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Api\RpcApiService.grpc.pb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Api\RpcApiService.pb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

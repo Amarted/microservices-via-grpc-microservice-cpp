@@ -19,13 +19,24 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Api\ApiModule.cpp" />
+    <ClCompile Include="src\Api\RpcService.cpp" />
+    <ClCompile Include="src\Api\Server.cpp" />
+    <ClCompile Include="src\Api\RpcApiService.grpc.pb.cc" />
+    <ClCompile Include="src\Api\RpcApiService.pb.cc" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\utils\screen.cpp" />
+    <ClCompile Include="src\utils\Screen.cpp" />
     <ClCompile Include="src\utils\UtilsModule.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="generate-proto-buffers-code.bat" />
+    <None Include="src\proto-buffers\RpcApiService.proto" />
     <None Include="vcpkg-configuration.json" />
     <None Include="vcpkg.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Api\RpcApiService.grpc.pb.h" />
+    <ClInclude Include="src\Api\RpcApiService.pb.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
@@ -80,7 +91,11 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>$(SolutionDir)out\$(Platform)\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)\out\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\out\intermediate\\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)\out\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\out\intermediate\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Label="Vcpkg">
@@ -125,7 +140,10 @@
       <BuildStlModules>true</BuildStlModules>
       <CompileAs>CompileAsCppModule</CompileAs>
       <ScanSourceForModuleDependencies>true</ScanSourceForModuleDependencies>
-      <TranslateIncludes>true</TranslateIncludes>
+      <TranslateIncludes>false</TranslateIncludes>
+      <Optimization>MaxSpeed</Optimization>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <EnableParallelCodeGeneration>true</EnableParallelCodeGeneration>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -140,6 +158,10 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <CompileAs>CompileAsCppModule</CompileAs>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <EnableModules>true</EnableModules>
+      <BuildStlModules>true</BuildStlModules>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
